@@ -27,12 +27,11 @@ fareDoubler(2);
 const fareTripler = createFareMultiplier(3);
 fareTripler(3);
 
-function selectDifferentDrivers() {
-    const randomIndex = Math.random();
+function selectDifferentDrivers(scuberDrivers, driverFunction) {
 
-    if (randomIndex > .5) {
-        return returnFirstTwoDrivers()
-    } else {
-        return returnLastTwoDrivers()
-    }    
+    if (driverFunction === returnFirstTwoDrivers) {
+        return returnFirstTwoDrivers(scuberDrivers)
+    } else if (driverFunction === returnLastTwoDrivers) {
+        return returnLastTwoDrivers(scuberDrivers)
+    }
 };
